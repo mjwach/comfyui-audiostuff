@@ -14,6 +14,14 @@ Connect the `audio` and `video_info` outputs of a VideoHelperSuite **Load Video*
 
 Feed `has_source_audio` into a switch node to skip audio-dependent branches for silent videos.
 
+### Compatibility patch
+
+Recent ComfyUI versions scan every linked output for models (`PromptModelTracker`), which
+forces VHS's lazy audio to load immediately and crashes on videos without an audio track,
+before any downstream node can handle it. On load, this pack makes the tracker skip VHS audio
+that hasn't been loaded yet (it can't contain models). See `compat.py`. As a side effect, VHS
+audio is no longer decoded until a node actually reads it.
+
 ## Install
 
 Clone into `ComfyUI/custom_nodes` and restart ComfyUI. No extra dependencies.

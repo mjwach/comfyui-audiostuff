@@ -111,5 +111,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "AudioStuff_EnsureVideoAudio": "Ensure Video Audio (audiostuff)",
+    "AudioStuff_EnsureVideoAudio": "Ensure VHS Audio",
 }
